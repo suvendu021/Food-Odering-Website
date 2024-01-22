@@ -1,0 +1,61 @@
+/*HEADER  PART*/
+* {
+  font-family: "Jost", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.header {
+  display: flex;
+  border: 1px solid black;
+  justify-content: space-between;
+}
+.logo {
+  padding: 5px;
+  width: 100px;
+}
+.nav-item {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+.nav-item > ul {
+  display: flex;
+  list-style: none;
+}
+.nav-item > ul > li {
+  margin: 7px;
+  padding: 7px;
+}
+
+/* body */
+
+/*  restaurant card */
+
+.body {
+  margin: 5px;
+}
+.resto-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+  justify-content: center;
+}
+
+.resto-card {
+  padding: 5px;
+
+  width: 230px;
+  border-radius: 10px;
+  margin: 7px;
+  margin-top: 50px;
+}
+.resto-card:hover {
+  border: 1.5px solid black;
+  cursor: pointer;
+}
+
+.resto-img {
+  height: 200px;
+  width: 230px;
+  border-radius: 10px;
+}
