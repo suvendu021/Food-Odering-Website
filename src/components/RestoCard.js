@@ -14,7 +14,7 @@ const RestoCard = (props) => {
       <h4>{name}</h4>
       <h6>{cuisines.join(", ")}</h6>
       <h6>{costForTwo}</h6>
-      <h6>{avgRating}</h6>
+      <h6>{avgRating + " "}Stars</h6>
     </div>
   );
 };

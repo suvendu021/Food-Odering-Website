@@ -59,3 +59,14 @@
   width: 230px;
   border-radius: 10px;
 }
+
+.filter {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.filter-btn {
+  padding: 5px;
+  cursor: pointer;
+}
