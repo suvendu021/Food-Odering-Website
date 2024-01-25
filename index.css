@@ -8,6 +8,10 @@
   display: flex;
   border: 1px solid black;
   justify-content: space-between;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 2;
 }
 .logo {
   padding: 5px;
@@ -27,12 +31,18 @@
   padding: 7px;
 }
 
+.log-btn {
+  padding: 7px;
+  margin: 7px;
+}
+
 /* body */
 
 /*  restaurant card */
 
 .body {
   margin: 5px;
+  position: relative;
 }
 .resto-container {
   display: flex;
@@ -69,4 +79,62 @@
 .filter-btn {
   padding: 5px;
   cursor: pointer;
+}
+
+/* shimmer ui for better ux*/
+
+.shimmer-container {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+  justify-content: center;
+}
+
+.shimmer-card {
+  padding: 5px;
+  width: 230px;
+  height: 270px;
+  border-radius: 10px;
+  margin: 7px;
+  margin-top: 50px;
+  background-color: #f0f0f0;
+}
+
+.sh-btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.shimmer-button {
+  color: #f0f0f0;
+  width: 200px;
+  height: 40px;
+  padding: 5px;
+  border: none;
+  margin-top: 50px;
+  justify-items: center;
+}
+.shimmer-button2 {
+  color: #f0f0f0;
+  width: 400px;
+  height: 40px;
+  padding: 5px;
+  border: none;
+  margin-top: 50px;
+  justify-items: center;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.search-box {
+  width: 300px;
+  padding: 5px;
+}
+
+.error {
+  text-align: center;
 }
