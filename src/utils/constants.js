@@ -4,4 +4,10 @@ export const LOGO_URL =
 const CARD_URL =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
 
+export const REST_INFO_URL =
+  "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=20.3007589&lng=85.82942589999999&restaurantId=";
+
+export const ITEM_IMG_URL =
+  "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/";
+
 export default CARD_URL;
