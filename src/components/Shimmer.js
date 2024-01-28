@@ -1,12 +1,12 @@
 const Shimmer = () => {
   return (
     <div>
-      <div className="sh-btn-container">
-        <button className="shimmer-button2"></button>
+      <div className="sh-container">
+        <button className="shimmer-search"></button>
       </div>
 
-      <div className="sh-btn-container">
-        <button className="shimmer-button"></button>
+      <div className="sh-container">
+        <button className="shimmer-filter"></button>
       </div>
 
       <div className="shimmer-container">

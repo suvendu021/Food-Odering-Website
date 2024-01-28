@@ -1,4 +1,4 @@
-# MUST DOWNLOAD CORS ACCESS-CONTROL-ALLOW-ORIGIN
+# MUST DOWNLOAD CORS ACCESS-CONTROL-ALLOW-ORIGIN chrome extension to run website(solve cors error )
 
 # Mo-Rosei-Ghara
 
