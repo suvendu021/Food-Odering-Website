@@ -6,11 +6,13 @@ class UserClass extends React.Component {
   }
 
   render() {
+    const { name, address, email } = this.props;
+
     return (
       <div className="user-container">
-        <h3>name:{this.props.name}</h3>
-        <h3>address: {this.props.address}</h3>
-        <h3>Email:{this.props.email}</h3>
+        <h3>name:{name}</h3>
+        <h3>address: {address}</h3>
+        <h3>Email:{email}</h3>
       </div>
     );
   }

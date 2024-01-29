@@ -42,18 +42,20 @@ const RestaurantMenu = () => {
 
       <ul>
         {itemCards.map((data) => {
+          const { id, name, isVeg, price, description, imageId } =
+            data?.card?.info;
           return (
-            <li key={data.card.info.id}>
+            <li key={id}>
               <div className="menu-container">
                 <div className="menu-container-info">
-                  <h4>{data?.card?.info?.name}</h4>
-                  <p>{data?.card?.info?.isVeg == 1 ? "(veg)" : "(Non Veg)"}</p>
-                  <h5>Rs{". " + data?.card?.info?.price / 100}</h5>
-                  <p>{data?.card?.info?.description}</p>
+                  <h4>{name}</h4>
+                  <p>{isVeg == 1 ? "(veg)" : "(Non Veg)"}</p>
+                  <h5>Rs{". " + price / 100}</h5>
+                  <p>{description}</p>
                 </div>
                 <div className="menu-img-btn-container">
                   <img
-                    src={ITEM_IMG_URL + data?.card?.info?.imageId}
+                    src={ITEM_IMG_URL + imageId}
                     className="menu-item-photo"
                   />
                   <button className="item-add-btn">Add</button>
