@@ -216,4 +216,6 @@
 .user-container {
   border: 1px solid black;
   padding: 8px;
+  width: 260px;
+  margin: 10px;
 }

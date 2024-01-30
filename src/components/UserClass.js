@@ -1,34 +1,44 @@
 import React from "react";
+import { EMPLOYEE_API_URL } from "../utils/constants";
 
 class UserClass extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      count1: 0,
-      count2: 0,
+      userData: {
+        name: "default",
+        location: "default",
+      },
     };
+    // console.log(this.props.name + "constuctor");
+  }
+
+  async componentDidMount() {
+    // console.log(this.props.name + "componentDidMount");
+
+    const apiData = await fetch(EMPLOYEE_API_URL);
+    const json = await apiData.json();
+    this.setState({
+      userData: json.users[1],
+    });
+    console.log(json);
+  }
+
+  componentDidUpdate() {
+    console.log("componentDidUpdate is called");
+  }
+  componentWillUnmount() {
+    console.log("componentWillUnmounis called");
   }
 
   render() {
-    const { name, address, email } = this.props;
-    const { count1, count2 } = this.state;
+    const { firstName, age, email, image } = this.state.userData;
 
     return (
       <div className="user-container">
-        <h3>name:{name}(class component)</h3>
-        <h3>Count1: {count1}</h3>
-        <h3>Count2: {count2}</h3>
-        <button
-          onClick={() => {
-            this.setState({
-              count1: count1 + 1,
-              count2: count2 + 1,
-            });
-          }}
-        >
-          Click
-        </button>
-        <h3>address: {address}</h3>
+        <img src={image} style={{ height: "80px" }} />
+        <h3>name:{firstName}</h3>
+        <h3>age: {age}</h3>
         <h3>Email:{email}</h3>
       </div>
     );

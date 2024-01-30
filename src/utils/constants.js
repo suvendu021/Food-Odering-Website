@@ -10,4 +10,6 @@ export const REST_INFO_URL =
 export const ITEM_IMG_URL =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/";
 
+export const EMPLOYEE_API_URL = "https://dummyjson.com/users";
+
 export default CARD_URL;
