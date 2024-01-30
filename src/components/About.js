@@ -10,7 +10,7 @@ const About = () => {
     <div className="about">
       <h1>About US </h1>
       <h3>This is our website about Section</h3>
-      <User {...properties} />
+      {/* <User {...properties} /> */}
       <UserClass {...properties} />
     </div>
   );
