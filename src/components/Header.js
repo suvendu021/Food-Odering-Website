@@ -4,10 +4,10 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 const Header = () => {
   const [logBtn, setlogBtn] = useState("Log-in");
-  console.log("header rendered");
+  // console.log("header rendered");
 
   useEffect(() => {
-    console.log("useeffect called");
+    // console.log("useeffect called");
   }, []);
 
   return (

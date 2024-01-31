@@ -3,40 +3,22 @@ import RestoCard from "./RestoCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useRestaurantList from "../utils/useRestaurantList";
 
 const Body = () => {
-  const [RestaurantList, setRestaurantList] = useState([]);
+  const restaurantList = useRestaurantList();
   const [filterSearchData, setFilterSearchData] = useState([]);
 
-  //use effect
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    //to solve CORS ERROR WE must add cors extension to browser
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=20.3007589&lng=85.82942589999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
-    const json = await data.json();
-
-    console.log(json);
-
-    setRestaurantList(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-    setFilterSearchData(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-  };
-
   const [filterBtn, setfilterBtn] = useState("Top-Rated Restaurants");
-
   const [searchData, setSearchData] = useState("");
 
-  console.log("page rendered");
+  useEffect(() => {
+    setFilterSearchData(restaurantList);
+  }, [restaurantList]);
 
-  return RestaurantList.length === 0 ? (
+  // console.log("page rendered");
+
+  return restaurantList.length === 0 ? (
     <Shimmer />
   ) : (
     <div className="body">
@@ -50,8 +32,8 @@ const Body = () => {
         <button
           className="search-btn"
           onClick={() => {
-            console.log(searchData);
-            const filterSearchData = RestaurantList.filter((data) =>
+            // console.log(searchData);
+            const filterSearchData = restaurantList.filter((data) =>
               data.info.name.toLowerCase().includes(searchData.toLowerCase())
             );
             setFilterSearchData(filterSearchData);
@@ -64,7 +46,7 @@ const Body = () => {
         <button
           className="filter-btn"
           onClick={() => {
-            const filterList = RestaurantList.filter(
+            const filterList = restaurantList.filter(
               (res) => res.info.avgRating > 4.5
             );
             setFilterSearchData(filterList);
