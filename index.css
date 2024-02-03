@@ -1,5 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /*HEADER  PART*/
-* {
+/* * {
   font-family: "Jost", sans-serif;
   margin: 0;
   padding: 0;
@@ -41,13 +45,13 @@
 .log-btn {
   padding: 7px;
   margin: 7px;
-}
+} */
 
 /* body */
 
 /*  restaurant card */
 
-.body {
+/* .body {
   margin: 5px;
   position: relative;
 }
@@ -87,11 +91,11 @@
 .filter-btn {
   padding: 5px;
   cursor: pointer;
-}
+} */
 
 /* shimmer ui for better ux*/
 
-.shimmer-container {
+/* .shimmer-container {
   margin-top: 50px;
   display: flex;
   flex-wrap: wrap;
@@ -173,10 +177,10 @@
 
 .error {
   text-align: center;
-}
+} */
 
 /*  restaurant menu */
-
+/* 
 .rest-name-menu-head {
   text-align: center;
   margin: 20px;
@@ -222,4 +226,4 @@
   padding: 8px;
   width: 260px;
   margin: 10px;
-}
+} */
