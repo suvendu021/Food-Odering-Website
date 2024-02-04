@@ -10,7 +10,7 @@ const ShimmerMenu = () => {
       </div>
 
       <div className="animate-pulse">
-        <div className="  bg-gray-200 my-5 mx-32 h-52"></div>
+        <div className=" animate-pulse  bg-gray-200 my-5 mx-32 h-52"></div>
         <div className="  bg-gray-200 my-5 mx-32 h-52"></div>
         <div className="  bg-gray-200 my-5 mx-32 h-52"></div>
         <div className="  bg-gray-200 my-5 mx-32 h-52"></div>

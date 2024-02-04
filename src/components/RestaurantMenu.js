@@ -41,9 +41,11 @@ const RestaurantMenu = () => {
                   <h5 className="font-bold text-sm">Rs{". " + price / 100}</h5>
                   <p className="text-sm">{description}</p>
                 </div>
-                <div className="w-2/5 p-2 flex justify-end ">
+                <div className="w-2/5 p-2 flex justify-center  relative ">
                   <img src={ITEM_IMG_URL + imageId} className=" w-28 h-24 " />
-                  <button className="">Add</button>
+                  <button className="absolute bottom-6 left-1/2 transform -translate-x-1/2 bg-gray-200 py-1 px-2 shadow-md">
+                    Add
+                  </button>
                 </div>
               </div>
             </li>

@@ -9,11 +9,16 @@ const useRestaurantList = () => {
   }, []);
 
   const fetchRestList = async () => {
-    const data = await fetch(SWIGGY_API);
-    const json = await data.json();
-    setRestaurantList(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
+    try {
+      const data = await fetch(SWIGGY_API);
+      const json = await data.json();
+      setRestaurantList(
+        json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants
+      );
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return restaurantList;

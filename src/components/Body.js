@@ -64,7 +64,7 @@ const Body = () => {
           {filterBtn}
         </button>
       </div>
-      <div className=" grid grid-cols-5 gap-3  m-2 p-2">
+      <div className="m-2 p-2 flex flex-col justify-center items-center md:grid  md:grid-cols-3  xl:grid-cols-5 md:gap-1 xl:gap-3 md:justify-items-center">
         {filterSearchData.map((restaurant) => (
           <Link
             to={"/restaurant/" + restaurant.info.id}

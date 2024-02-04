@@ -15,12 +15,16 @@ class UserClass extends React.Component {
 
   async componentDidMount() {
     // console.log(this.props.name + "componentDidMount");
+    try {
+      const apiData = await fetch(EMPLOYEE_API_URL);
+      const json = await apiData.json();
+      this.setState({
+        userData: json.users[1],
+      });
+    } catch (error) {
+      console.log(error);
+    }
 
-    const apiData = await fetch(EMPLOYEE_API_URL);
-    const json = await apiData.json();
-    this.setState({
-      userData: json.users[1],
-    });
     // console.log(json);
   }
 

@@ -19,7 +19,7 @@ const Header = () => {
         <img className="w-24 p-1" src={LOGO_URL} />
       </div>
       <div>
-        <ul className="flex space-x-8 items-center p-2 ">
+        <ul className="md:flex md:space-x-8 md:items-center md:p-2 ">
           <li>OnlineStatus : {onlineStatus === true ? "🟢" : "🔴"}</li>
           <li className="hover:text-red-500">
             <Link to={"/"}>Home</Link>
@@ -31,6 +31,7 @@ const Header = () => {
             <Link to={"/about"}>About Us</Link>
           </li>
           <li>Cart</li>
+
           <button
             className="bg-slate-100 hover:bg-slate-300 shadow-md p-2"
             onClick={() => {
