@@ -35,11 +35,11 @@ class UserClass extends React.Component {
     const { firstName, age, email, image } = this.state.userData;
 
     return (
-      <div className="user-container">
+      <div className="w-56 p-2 m-2 border border-black">
         <img src={image} style={{ height: "80px" }} />
-        <h3>name:{firstName}</h3>
+        <h3 className="font-bold">name: {firstName}</h3>
         <h3>age: {age}</h3>
-        <h3>Email:{email}</h3>
+        <h3>Email: {email}</h3>
       </div>
     );
   }

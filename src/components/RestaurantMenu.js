@@ -20,10 +20,10 @@ const RestaurantMenu = () => {
   // console.log(itemCards);
 
   return (
-    <div className="res-menu">
-      <div className="rest-name-menu-head">
-        <h1>{name}</h1>
-        <h2>menu items</h2>
+    <div>
+      <div className="mt-10">
+        <h1 className="text-center font-bold text-3xl">{name}</h1>
+        <h2 className="text-center font-bold text-xl">menu items</h2>
       </div>
 
       <ul>
@@ -32,19 +32,18 @@ const RestaurantMenu = () => {
             data?.card?.info;
           return (
             <li key={id}>
-              <div className="menu-container">
-                <div className="menu-container-info">
-                  <h4>{name}</h4>
-                  <p>{isVeg == 1 ? "(veg)" : "(Non Veg)"}</p>
-                  <h5>Rs{". " + price / 100}</h5>
-                  <p>{description}</p>
+              <div className="flex border-b border-black my-5 mx-32 h-52">
+                <div className="p-2 m-2 w-3/5">
+                  <h4 className="font-bold">{name}</h4>
+                  <p className="text-sm">
+                    {isVeg == 1 ? "(veg)" : "(Non Veg)"}
+                  </p>
+                  <h5 className="font-bold text-sm">Rs{". " + price / 100}</h5>
+                  <p className="text-sm">{description}</p>
                 </div>
-                <div className="menu-img-btn-container">
-                  <img
-                    src={ITEM_IMG_URL + imageId}
-                    className="menu-item-photo"
-                  />
-                  <button className="item-add-btn">Add</button>
+                <div className="w-2/5 p-2 flex justify-end ">
+                  <img src={ITEM_IMG_URL + imageId} className=" w-28 h-24 " />
+                  <button className="">Add</button>
                 </div>
               </div>
             </li>

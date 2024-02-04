@@ -14,25 +14,25 @@ const Header = () => {
   const onlineStatus = useOnlineStatus();
 
   return (
-    <div className="p-2.5 sticky top-0 bg-white flex justify-between items-center border border-black">
+    <div className="m-0 p-1 sticky top-0 z-10 bg-white flex justify-between items-center shadow-lg">
       <div>
-        <img className="w-28" src={LOGO_URL} />
+        <img className="w-24 p-1" src={LOGO_URL} />
       </div>
       <div>
-        <ul className="flex space-x-8 items-center">
+        <ul className="flex space-x-8 items-center p-2 ">
           <li>OnlineStatus : {onlineStatus === true ? "🟢" : "🔴"}</li>
-          <li>
+          <li className="hover:text-red-500">
             <Link to={"/"}>Home</Link>
           </li>
-          <li>
+          <li className="hover:text-red-500">
             <Link to={"/contact"}>Contact Us</Link>
           </li>
-          <li>
+          <li className="hover:text-red-500">
             <Link to={"/about"}>About Us</Link>
           </li>
           <li>Cart</li>
           <button
-            className="bg-slate-300 p-2"
+            className="bg-slate-100 hover:bg-slate-300 shadow-md p-2"
             onClick={() => {
               logBtn === "Log-in" ? setlogBtn("Log-out") : setlogBtn("Log-in");
             }}

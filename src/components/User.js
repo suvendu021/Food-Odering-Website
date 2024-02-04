@@ -12,7 +12,7 @@ const User = (props) => {
   };
 
   return (
-    <div className="user-container">
+    <div className="w-auto border border-black">
       <h3>name:{props.name}</h3>
       <h3>Count1: {count1}</h3>
       <h3>Count2: {count2}</h3>
