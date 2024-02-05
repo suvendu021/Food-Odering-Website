@@ -17,7 +17,7 @@ const RestaurantMenu = () => {
     restData?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
       ?.card;
 
-  // console.log(itemCards);
+  console.log(restData?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
 
   return (
     <div>
@@ -32,7 +32,7 @@ const RestaurantMenu = () => {
             data?.card?.info;
           return (
             <li key={id}>
-              <div className="flex border-b border-black my-5 mx-32 h-52">
+              <div className="flex border-b border-black my-5 md:mx-32 h-auto">
                 <div className="p-2 m-2 w-3/5">
                   <h4 className="font-bold">{name}</h4>
                   <p className="text-sm">

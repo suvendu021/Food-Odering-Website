@@ -1,5 +1,5 @@
 //body of app
-import RestoCard from "./RestoCard";
+import RestoCard, { RestaurantType } from "./RestoCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
@@ -12,11 +12,11 @@ const Body = () => {
   const [filterBtn, setfilterBtn] = useState("Top-Rated Restaurants");
   const [searchData, setSearchData] = useState("");
 
+  const TypeOfRest = RestaurantType(RestoCard);
+
   useEffect(() => {
     setFilterSearchData(restaurantList);
   }, [restaurantList]);
-
-  // console.log("page rendered");
 
   const onlineStatus = useOnlineStatus();
 
@@ -28,7 +28,7 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div>
-      <div className="flex mt-12 justify-center">
+      <div className="flex mt-12 justify-center font-jost">
         <input
           type="text"
           className="p-1 bg-slate-200 w-72 focus:outline-none shadow-md"
@@ -48,7 +48,7 @@ const Body = () => {
           Search
         </button>
       </div>
-      <div className="flex justify-center mt-5">
+      <div className="flex justify-center mt-5 font-jost">
         <button
           className="p-2 bg-slate-100 hover:bg-slate-300 shadow-md"
           onClick={() => {
@@ -64,13 +64,17 @@ const Body = () => {
           {filterBtn}
         </button>
       </div>
-      <div className="m-2 p-2 flex flex-col justify-center items-center md:grid  md:grid-cols-3  xl:grid-cols-5 md:gap-1 xl:gap-3 md:justify-items-center">
+      <div className=" m-2 p-2 flex flex-col justify-center items-center md:grid  md:grid-cols-3  xl:grid-cols-5 md:gap-1 xl:gap-3 md:justify-items-center">
         {filterSearchData.map((restaurant) => (
           <Link
             to={"/restaurant/" + restaurant.info.id}
             key={restaurant.info.id}
           >
-            <RestoCard resData={restaurant} />
+            {restaurant.info.veg ? (
+              <TypeOfRest resData={restaurant} />
+            ) : (
+              <RestoCard resData={restaurant} />
+            )}
           </Link>
         ))}
       </div>

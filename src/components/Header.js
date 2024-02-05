@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 const Header = () => {
   const [logBtn, setlogBtn] = useState("Log-in");
+  const [showMenu, setShowMenu] = useState(false);
   // console.log("header rendered");
 
   useEffect(() => {
@@ -14,12 +15,25 @@ const Header = () => {
   const onlineStatus = useOnlineStatus();
 
   return (
-    <div className="m-0 p-1 sticky top-0 z-10 bg-white flex justify-between items-center shadow-lg">
+    <div className="m-0 p-1 sticky top-0 z-10 bg-white flex justify-between items-center shadow-lg font-jost">
       <div>
         <img className="w-24 p-1" src={LOGO_URL} />
       </div>
       <div>
-        <ul className="md:flex md:space-x-8 md:items-center md:p-2 ">
+        <div className="md:hidden m-2 p-2 flex justify-end">
+          <button
+            className="material-symbols-outlined"
+            onClick={() => setShowMenu(!showMenu)}
+          >
+            {showMenu ? "close" : "menu"}
+          </button>
+        </div>
+
+        <ul
+          className={`md:flex md:space-x-8 md:items-center md:p-2 md:m-2 ${
+            showMenu ? "block" : "hidden"
+          }`}
+        >
           <li>OnlineStatus : {onlineStatus === true ? "🟢" : "🔴"}</li>
           <li className="hover:text-red-500">
             <Link to={"/"}>Home</Link>
