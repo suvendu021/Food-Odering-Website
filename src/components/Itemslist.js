@@ -6,23 +6,24 @@ const ItemsList = ({ items }) => {
         const { id, name, isVeg, price, description, imageId } =
           data?.card?.info;
         return (
-          <div key={id} className="font-jost">
-            <div className="flex border-b border-black my-5 w-3/5 mx-auto h-auto">
-              <div className="p-2 m-2 w-3/5">
+          <div key={id} className="font-jost text-sm">
+            <div className="flex border-b border-black h-auto">
+              <div className="p-1 m-1 w-3/5">
                 <h4 className="font-semibold">{name}</h4>
-                <p className="text-sm">{isVeg == 1 ? "(veg)" : "(Non Veg)"}</p>
-                <h5 className="font-semibold text-sm">
-                  Rs{". " + price / 100}
-                </h5>
-                <p className="text-sm">{description}</p>
+                <p>{isVeg == 1 ? "(veg)" : "(Non Veg)"}</p>
+                <h5 className="font-semibold ">Rs{". " + price / 100}</h5>
+                <p>{description}</p>
               </div>
-              <div className="w-2/5 p-2 flex justify-center">
+              <div className="w-2/5 p-1 flex justify-center">
                 <div>
-                  <button className="p-1 bg-black text-white rounded-lg text-sm absolute mx-8 my-14">
+                  <button className="p-1 bg-black text-white rounded-lg  absolute mx-8 my-8">
                     Add +
                   </button>
                 </div>
-                <img src={ITEM_IMG_URL + imageId} className=" w-28 h-24 " />
+                <img
+                  src={ITEM_IMG_URL + imageId}
+                  className=" md:w-28 md:h-24 h-16 w-20 "
+                />
               </div>
             </div>
           </div>
