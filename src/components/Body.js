@@ -24,7 +24,7 @@ const Body = () => {
     return <h1>No internet connection plz recheck your connection</h1>;
   }
 
-  return restaurantList.length === 0 ? (
+  return restaurantList && restaurantList.length === 0 ? (
     <Shimmer />
   ) : (
     <div>

@@ -9,23 +9,17 @@ const ShimmerMenu = () => {
         <button className="animate-pulse w-40 h-6 mt-2 bg-gray-200"></button>
       </div>
 
-      <div className="animate-pulse">
-        <div className=" animate-pulse  bg-gray-200 my-5 mx-32 h-52"></div>
-        <div className="  bg-gray-200 my-5 mx-32 h-52"></div>
-        <div className="  bg-gray-200 my-5 mx-32 h-52"></div>
-        <div className="  bg-gray-200 my-5 mx-32 h-52"></div>
-        <div className="  bg-gray-200 my-5 mx-32 h-52"></div>
-        <div className="  bg-gray-200 my-5 mx-32 h-52"></div>
-        <div className="  bg-gray-200 my-5 mx-32 h-52"></div>
-        <div className="  bg-gray-200 my-5 mx-32 h-52"></div>
-        <div className="  bg-gray-200 my-5 mx-32 h-52"></div>
-        <div className="  bg-gray-200 my-5 mx-32 h-52"></div>
-        <div className="  bg-gray-200 my-5 mx-32 h-52"></div>
-        <div className="  bg-gray-200 my-5 mx-32 h-52"></div>
-        <div className="  bg-gray-200 my-5 mx-32 h-52"></div>
-        <div className="  bg-gray-200 my-5 mx-32 h-52"></div>
-        <div className="  bg-gray-200 my-5 mx-32 h-52"></div>
-        <div className="  bg-gray-200 my-5 mx-32 h-52"></div>
+      <div className="animate-pulse flex flex-col justify-center items-center mt-10">
+        <div className="  bg-gray-200 my-3  h-11 w-8/12 "></div>
+        <div className="  bg-gray-200 my-3  h-11 w-8/12 "></div>
+        <div className="  bg-gray-200 my-3  h-11 w-8/12 "></div>
+        <div className="  bg-gray-200 my-3  h-11 w-8/12 "></div>
+        <div className="  bg-gray-200 my-3  h-11 w-8/12 "></div>
+        <div className="  bg-gray-200 my-3  h-11 w-8/12 "></div>
+        <div className="  bg-gray-200 my-3  h-11 w-8/12 "></div>
+        <div className="  bg-gray-200 my-3  h-11 w-8/12 "></div>
+        <div className="  bg-gray-200 my-3  h-11 w-8/12 "></div>
+        <div className="  bg-gray-200 my-3  h-11 w-8/12 "></div>
       </div>
     </div>
   );
