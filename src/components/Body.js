@@ -18,6 +18,8 @@ const Body = () => {
     setFilterSearchData(restaurantList);
   }, [restaurantList]);
 
+  console.log(filterSearchData);
+
   const onlineStatus = useOnlineStatus();
 
   if (onlineStatus === false) {
