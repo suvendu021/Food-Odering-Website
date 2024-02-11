@@ -2,7 +2,7 @@ import CARD_URL from "../utils/constants";
 
 const RestoCard = (props) => {
   const { resData } = props;
-  const { cloudinaryImageId, name, cuisines, costForTwo, avgRating } =
+  const { cloudinaryImageId, name, cuisines, costForTwo, avgRating, sla } =
     resData?.info;
   return (
     <div className="h-72 w-52 p-2 hover:bg-gray-300 shadow-lg mt-12 m-2 rounded-xl">
@@ -19,16 +19,17 @@ const RestoCard = (props) => {
       </h6>
       <h6 className="font-bold text-sm">{costForTwo}</h6>
       <h6 className="text-xs font-medium">⭐{avgRating}</h6>
+      <p className="text-xs">DeliveryTime🛎️ : {sla.slaString}</p>
     </div>
   );
 };
 
-export const RestaurantType = (RestoCard) => {
+export const PromotedRestaurant = (RestoCard) => {
   return (props) => {
     return (
       <div>
         <label className="absolute bg-black text-white rounded-lg m-2 p-2">
-          veg
+          promoted
         </label>
         <RestoCard {...props} />
       </div>

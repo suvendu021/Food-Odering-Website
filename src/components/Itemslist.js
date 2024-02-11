@@ -16,7 +16,7 @@ const ItemsList = ({ items }) => {
               </div>
               <div className="w-2/5 p-1 flex justify-center">
                 <div>
-                  <button className="p-1 bg-black text-white rounded-lg  absolute mx-8 my-8">
+                  <button className="p-1 bg-black text-white rounded-lg  absolute mx-8 my-2 ">
                     Add +
                   </button>
                 </div>

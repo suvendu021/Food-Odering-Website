@@ -25,5 +25,3 @@ const useRestaurantList = () => {
   return restaurantList;
 };
 export default useRestaurantList;
-
-

@@ -1,5 +1,5 @@
 //body of app
-import RestoCard, { RestaurantType } from "./RestoCard";
+import RestoCard, { PromotedRestaurant } from "./RestoCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
@@ -12,7 +12,7 @@ const Body = () => {
   const [filterBtn, setfilterBtn] = useState("Top-Rated Restaurants");
   const [searchData, setSearchData] = useState("");
 
-  const TypeOfRest = RestaurantType(RestoCard);
+  const TypeOfRest = PromotedRestaurant(RestoCard);
 
   useEffect(() => {
     setFilterSearchData(restaurantList);
@@ -72,7 +72,7 @@ const Body = () => {
             to={"/restaurant/" + restaurant.info.id}
             key={restaurant.info.id}
           >
-            {restaurant.info.veg ? (
+            {restaurant.info.promoted ? (
               <TypeOfRest resData={restaurant} />
             ) : (
               <RestoCard resData={restaurant} />

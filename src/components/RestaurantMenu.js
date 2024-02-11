@@ -13,7 +13,7 @@ const RestaurantMenu = () => {
   if (restData === null) {
     return <ShimmerMenu />;
   }
-  // console.log(restData);
+  console.log(restData);
   const { name } = restData?.cards[2]?.card?.card?.info;
 
   const categories =
