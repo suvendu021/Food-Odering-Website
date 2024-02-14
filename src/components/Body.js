@@ -1,10 +1,11 @@
 //body of app
 import RestoCard, { PromotedRestaurant } from "./RestoCard";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useRestaurantList from "../utils/useRestaurantList";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "./UserContext";
 
 const Body = () => {
   const restaurantList = useRestaurantList();
@@ -21,6 +22,8 @@ const Body = () => {
   console.log(filterSearchData);
 
   const onlineStatus = useOnlineStatus();
+
+  const { loggedInUser, setUserName } = useContext(UserContext);
 
   if (onlineStatus === false) {
     return <h1>No internet connection plz recheck your connection</h1>;
@@ -65,6 +68,16 @@ const Body = () => {
         >
           {filterBtn}
         </button>
+      </div>
+      <div className="flex justify-center items-center my-5">
+        <label>UserName : </label>
+        <input
+          type="text"
+          placeholder="Enter Name"
+          className=" border-2 border-black p-1"
+          value={loggedInUser}
+          onChange={(e) => setUserName(e.target.value)}
+        />
       </div>
       <div className=" m-2 p-2 flex flex-col justify-center items-center md:grid  md:grid-cols-3  xl:grid-cols-5 md:gap-1 xl:gap-3 md:justify-items-center">
         {filterSearchData.map((restaurant) => (

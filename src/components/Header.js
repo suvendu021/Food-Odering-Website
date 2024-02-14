@@ -1,12 +1,17 @@
 //HEADER
 import { LOGO_URL } from "../utils/constants";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "./UserContext";
+
 const Header = () => {
   const [logBtn, setlogBtn] = useState("Log-in");
   const [showMenu, setShowMenu] = useState(false);
   // console.log("header rendered");
+
+  const nameOfUser = useContext(UserContext);
+  console.log(nameOfUser);
 
   useEffect(() => {
     // console.log("useeffect called");
@@ -54,6 +59,8 @@ const Header = () => {
           >
             {logBtn}
           </button>
+
+          <li>{nameOfUser.loggedInUser}</li>
         </ul>
       </div>
     </div>

@@ -14,17 +14,19 @@ const ItemsList = ({ items }) => {
                 <h5 className="font-semibold ">Rs{". " + price / 100}</h5>
                 <p>{description}</p>
               </div>
-              <div className="w-2/5 p-1 flex justify-center">
-                <div>
-                  <button className="p-1 bg-black text-white rounded-lg  absolute mx-8 my-2 ">
-                    Add +
-                  </button>
+              {imageId ? (
+                <div className="w-2/5 p-1 flex justify-center">
+                  <div>
+                    <button className="p-1 bg-black text-white rounded-lg  absolute mx-8 my-2 ">
+                      Add +
+                    </button>
+                  </div>
+                  <img
+                    src={ITEM_IMG_URL + imageId}
+                    className=" md:w-28 md:h-24 h-16 w-20 "
+                  />
                 </div>
-                <img
-                  src={ITEM_IMG_URL + imageId}
-                  className=" md:w-28 md:h-24 h-16 w-20 "
-                />
-              </div>
+              ) : null}
             </div>
           </div>
         );
