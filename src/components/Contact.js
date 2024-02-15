@@ -8,7 +8,7 @@ const Contact = () => {
         className="md:text-xl font-bold"
         href="mailto:suvendukumarsahoo2002@gamil.com"
       >
-        Email : suvendukumarsahoo2002@gamil.com
+        Email : suvendukumarsahoo2002@gmail.com
       </a>
     </div>
   );
