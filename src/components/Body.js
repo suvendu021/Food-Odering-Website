@@ -79,7 +79,7 @@ const Body = () => {
           onChange={(e) => setUserName(e.target.value)}
         />
       </div>
-      <div className=" m-2 p-2 flex flex-col justify-center items-center md:grid  md:grid-cols-3  xl:grid-cols-5 md:gap-1 xl:gap-3 md:justify-items-center">
+      <div className=" m-2 p-2 flex flex-col justify-center items-center md:grid  md:grid-cols-3  lg:grid-cols-5 md:gap-1 xl:gap-3 md:justify-items-center">
         {filterSearchData.map((restaurant) => (
           <Link
             to={"/restaurant/" + restaurant.info.id}

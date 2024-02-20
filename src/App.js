@@ -11,6 +11,7 @@ import UserContext from "./components/UserContext";
 import { useState, useEffect } from "react";
 import { Provider } from "react-redux";
 import AppStore from "./utils/AppStore";
+import Cart from "./components/Cart";
 
 const AppLayout = () => {
   const [userName, setUserName] = useState();
@@ -26,7 +27,7 @@ const AppLayout = () => {
   return (
     <Provider store={AppStore}>
       <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
-        <div className="appLayout">
+        <div>
           <Header />
           <Outlet />
         </div>
@@ -55,6 +56,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/restaurant/:resId",
         element: <RestaurantMenu />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
     errorElement: <Error />,

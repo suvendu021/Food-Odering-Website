@@ -4,6 +4,7 @@ import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "./UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [logBtn, setlogBtn] = useState("Log-in");
@@ -19,8 +20,11 @@ const Header = () => {
 
   const onlineStatus = useOnlineStatus();
 
+  const cartItems = useSelector((store) => store.cart.items);
+  console.log(cartItems);
+
   return (
-    <div className="m-0 p-1 sticky top-0 z-10 bg-white flex justify-between items-center shadow-lg font-jost">
+    <div className="m-0 p-1 sticky top-0 z-10 bg-white flex justify-between items-center shadow-lg font-semibold">
       <div>
         <img className="w-24 p-1" src={LOGO_URL} />
       </div>
@@ -40,19 +44,40 @@ const Header = () => {
           }`}
         >
           <li>OnlineStatus : {onlineStatus === true ? "🟢" : "🔴"}</li>
-          <li className="hover:text-red-500">
-            <Link to={"/"}>Home</Link>
+          <li>
+            <Link className="hover:text-red-500 focus:text-red-500" to={"/"}>
+              Home
+            </Link>
           </li>
-          <li className="hover:text-red-500">
-            <Link to={"/contact"}>Contact Us</Link>
+          <li>
+            <Link
+              className="hover:text-red-500 focus:text-red-500"
+              to={"/contact"}
+            >
+              Contact Us
+            </Link>
           </li>
-          <li className="hover:text-red-500">
-            <Link to={"/about"}>About Us</Link>
+          <li>
+            <Link
+              className="hover:text-red-500 focus:text-red-500"
+              to={"/about"}
+            >
+              About Us
+            </Link>
           </li>
-          <li>Cart</li>
+          <li>
+            <Link
+              className="hover:text-red-500 focus:text-red-500"
+              to={"/cart"}
+            >
+              Cart-({cartItems.length})
+            </Link>
+          </li>
 
           <button
-            className="bg-slate-100 hover:bg-slate-300 shadow-md p-2"
+            className={`bg-slate-100 hover:bg-slate-300 shadow-md p-2 ${
+              logBtn === "Log-in" ? "text-green-500" : "text-red-500"
+            }`}
             onClick={() => {
               logBtn === "Log-in" ? setlogBtn("Log-out") : setlogBtn("Log-in");
             }}

@@ -16,7 +16,7 @@ const RestaurantItemCategory = ({ data, showData, showIndex }) => {
 
   return (
     <div
-      className="w-8/12  bg-gray-200  mx-auto p-2 m-auto my-5 shadow-lg  cursor-pointer font-jost"
+      className="w-8/12  bg-gray-200  mx-auto p-2 m-auto my-5 shadow-lg  cursor-pointer"
       onClick={() => {
         showRestaurantMenu();
 

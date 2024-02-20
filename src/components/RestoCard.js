@@ -19,7 +19,7 @@ const RestoCard = (props) => {
       </h6>
       <h6 className="font-bold text-sm">{costForTwo}</h6>
       <h6 className="text-xs font-medium">⭐{avgRating}</h6>
-      <p className="text-xs">DeliveryTime🛎️ : {sla.slaString}</p>
+      <p className="text-sm font-semibold">DeliveryTime🛎️ : {sla.slaString}</p>
     </div>
   );
 };
