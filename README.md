@@ -21,4 +21,4 @@ footer
 
 #website live at
 
-https://food-odering-website-dv7v0ofjx-suvendu021s-projects.vercel.app
+https://food-odering-website-eosin.vercel.app
