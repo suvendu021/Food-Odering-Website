@@ -17,7 +17,7 @@ const RestaurantMenu = () => {
   const { name } = restData?.cards[2]?.card?.card?.info;
 
   const categories =
-    restData?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+    restData?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
       (c) =>
         c.card?.["card"]?.["@type"] ===
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
