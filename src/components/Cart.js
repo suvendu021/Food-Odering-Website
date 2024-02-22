@@ -23,7 +23,9 @@ const Cart = () => {
         ClearCart
       </button>
       {cartItems.length === 0 ? (
-        <p>Your cart is Empty, Plz add some Items !!!</p>
+        <p className="text-3xl mt-10">
+          Your cart is Empty🥲, Plz add some Items !!!
+        </p>
       ) : null}
 
       <div className="w-10/12  p-2 ">

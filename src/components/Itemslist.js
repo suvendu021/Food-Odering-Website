@@ -12,7 +12,7 @@ const ItemsList = ({ items }) => {
   return (
     <div>
       {items.map((data) => {
-        const { id, name, isVeg, price, description, imageId } =
+        const { id, name, isVeg, price, description, imageId, defaultPrice } =
           data?.card?.info;
         return (
           <div key={id} className="text-sm">
@@ -20,7 +20,9 @@ const ItemsList = ({ items }) => {
               <div className="p-1 m-1 w-3/5">
                 <h4 className="font-bold">{name}</h4>
                 <p>{isVeg == 1 ? "(veg🟢)" : "(Non Veg🔴)"}</p>
-                <h5 className="font-bold ">Rs{". " + price / 100}</h5>
+                <h5 className="font-bold ">
+                  Rs. {price ? price / 100 : defaultPrice / 100}
+                </h5>
                 <p>{description}</p>
               </div>
 
