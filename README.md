@@ -17,8 +17,3 @@ footer
 ->links
 ->address
 ->contact
-
-
-#website live at
-
-https://food-odering-website-eosin.vercel.app
