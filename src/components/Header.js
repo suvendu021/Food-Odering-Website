@@ -12,7 +12,7 @@ const Header = () => {
   // console.log("header rendered");
 
   const nameOfUser = useContext(UserContext);
-  console.log(nameOfUser);
+  // console.log(nameOfUser);
 
   useEffect(() => {
     // console.log("useeffect called");
@@ -21,7 +21,7 @@ const Header = () => {
   const onlineStatus = useOnlineStatus();
 
   const cartItems = useSelector((store) => store.cart.items);
-  console.log(cartItems);
+  // console.log(cartItems);
 
   return (
     <div className="m-0 p-1 sticky top-0 z-10 bg-white flex justify-between items-center shadow-lg font-semibold">

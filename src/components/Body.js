@@ -19,7 +19,7 @@ const Body = () => {
     setFilterSearchData(restaurantList);
   }, [restaurantList]);
 
-  console.log(filterSearchData);
+  // console.log(filterSearchData);
 
   const onlineStatus = useOnlineStatus();
 
@@ -36,6 +36,7 @@ const Body = () => {
       <div className="flex mt-12 justify-center font-jost">
         <input
           type="text"
+          data-testid="searchinput"
           className="p-1 bg-slate-200 w-72 focus:outline-none shadow-md"
           value={searchData}
           onChange={(val) => setSearchData(val.target.value)}
@@ -58,12 +59,15 @@ const Body = () => {
           className="p-2 bg-slate-100 hover:bg-slate-300 shadow-md"
           onClick={() => {
             const filterList = restaurantList.filter(
-              (res) => res.info.avgRating > 4.3
+              (res) => res.info.avgRating >= 4.5
             );
             setFilterSearchData(filterList);
             filterBtn === "Top-Rated Restaurants"
               ? setfilterBtn("Back to Home")
               : setfilterBtn("Top-Rated Restaurants");
+            filterBtn === "Back to Home"
+              ? setFilterSearchData(restaurantList)
+              : setFilterSearchData(filterList);
           }}
         >
           {filterBtn}
