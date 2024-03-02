@@ -2,18 +2,20 @@
 
 # Mo-Rosei-Ghara
 
-Header
--->logo
--->nav items
+- Header
 
-Body
--->search input
--->restaurant container
-->restaurant card
+  - logo
+  - nav items
 
-footer
+- Body
 
--> copyright
-->links
-->address
-->contact
+  - search input
+  - restaurant container
+  - restaurant card
+
+- footer
+
+  - copyright
+  - links
+  - address
+  - contact
