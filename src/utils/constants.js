@@ -13,6 +13,6 @@ export const ITEM_IMG_URL =
 export const EMPLOYEE_API_URL = "https://dummyjson.com/users";
 
 export const SWIGGY_API =
-  "https://www.swiggy.com/dapi/restaurants/list/v5?lat=20.43625&lng=85.83838569999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+  "https://www.swiggy.com/dapi/restaurants/list/v5?lat=20.3625198&lng=85.8012566&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
 
 export default CARD_URL;

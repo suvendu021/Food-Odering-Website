@@ -10,18 +10,35 @@ const useRestaurantList = () => {
 
   const fetchRestList = async () => {
     try {
-      const data = await fetch(SWIGGY_API);
-      const json = await data.json();
-      // console.log(json);
+      const response = await fetch(SWIGGY_API);
+      const json = await response.json();
+      console.log(json);
       setRestaurantList(
         json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants
       );
+
+      if (
+        json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants === undefined
+      ) {
+        fetchRestoForMobile(json); // Pass JSON data to fetchRestoForMobile
+      }
     } catch (error) {
       console.log(error);
     }
   };
 
+  const fetchRestoForMobile = async (jsonData) => {
+    // Accept JSON data as an argument
+    console.log(jsonData);
+    setRestaurantList(
+      jsonData?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants
+    );
+  };
+
   return restaurantList;
 };
+
 export default useRestaurantList;
