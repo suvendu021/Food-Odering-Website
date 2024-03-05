@@ -16,7 +16,7 @@ const RestaurantMenu = () => {
   console.log(restData);
   const { name } =
     restData?.cards[0]?.card?.card?.info ||
-    restData?.cards[2]?.card?.card?.info?.name;
+    restData?.cards[2]?.card?.card?.info;
 
   const categories =
     restData?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards === undefined
