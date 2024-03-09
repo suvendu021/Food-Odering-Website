@@ -14,12 +14,12 @@ const useRestaurantList = () => {
       const json = await response.json();
       console.log(json);
       setRestaurantList(
-        json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle
+        json?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants
       );
 
       if (
-        json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle
+        json?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants === undefined
       ) {
         fetchRestoForMobile(json); // Pass JSON data to fetchRestoForMobile
