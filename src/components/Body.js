@@ -19,7 +19,7 @@ const Body = () => {
     setFilterSearchData(restaurantList);
   }, [restaurantList]);
 
-  console.log(filterSearchData);
+  // console.log(filterSearchData);
 
   const onlineStatus = useOnlineStatus();
 

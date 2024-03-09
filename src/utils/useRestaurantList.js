@@ -12,14 +12,14 @@ const useRestaurantList = () => {
     try {
       const response = await fetch(SWIGGY_API);
       const json = await response.json();
-      console.log(json);
+      // console.log(json);
       setRestaurantList(
-        json?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle
+        json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants
       );
 
       if (
-        json?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle
+        json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants === undefined
       ) {
         fetchRestoForMobile(json); // Pass JSON data to fetchRestoForMobile
@@ -31,7 +31,7 @@ const useRestaurantList = () => {
 
   const fetchRestoForMobile = async (jsonData) => {
     // Accept JSON data as an argument
-    console.log(jsonData);
+    // console.log(jsonData);
     setRestaurantList(
       jsonData?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
