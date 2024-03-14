@@ -1,33 +1,33 @@
 import { useState } from "react";
 import ItemsList from "./Itemslist";
 
-const RestaurantItemCategory = ({ data, showData, showIndex }) => {
-  // const [showdata, setShowData] = useState(false);
-
-  // const showRestaurantMenu = () => {
-  //   setShowData(!showdata);
-  // };
+const RestaurantItemCategory = ({ data }) => {
+  const [showData, setShowData] = useState(false);
 
   const showRestaurantMenu = () => {
-    showIndex();
+    setShowData(!showData);
   };
+
+  // const showRestaurantMenu = () => {
+  //   showIndex();
+  // };
 
   const [showIconUp, setShowIconUp] = useState(false);
 
   return (
-    <div
-      className="w-8/12  bg-gray-200  mx-auto p-2 m-auto my-5 shadow-lg  cursor-pointer"
-      onClick={() => {
-        showRestaurantMenu();
-
-        setShowIconUp(!showIconUp);
-      }}
-    >
+    <div className="w-8/12  bg-gray-200  mx-auto p-2 m-auto my-5 shadow-lg  cursor-pointer">
       <div className="flex justify-between">
         <h2 className="font-bold text-base">
           {data.title} ({data.itemCards.length}){" "}
         </h2>
-        <span className="material-symbols-outlined">
+        <span
+          className="material-symbols-outlined"
+          onClick={() => {
+            showRestaurantMenu();
+
+            setShowIconUp(!showIconUp);
+          }}
+        >
           {showIconUp ? "expand_less" : "expand_more"}
         </span>
       </div>
