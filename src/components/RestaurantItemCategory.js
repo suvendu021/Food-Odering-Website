@@ -1,17 +1,16 @@
 import { useState } from "react";
 import ItemsList from "./Itemslist";
 
-const RestaurantItemCategory = ({ data }) => {
-  const [showData, setShowData] = useState(false);
+const RestaurantItemCategory = ({ data, showData, showIndex }) => {
+  // const [showdata, setShowData] = useState(false);
+
+  // const showRestaurantMenu = () => {
+  //   setShowData(!showdata);
+  // };
 
   const showRestaurantMenu = () => {
-    setShowData(!showData);
+    showIndex();
   };
-
-  // when this component controlled by restaurant menu
-  // const showRestaurantMenu = () => {
-  //   showIndex();
-  // };
 
   const [showIconUp, setShowIconUp] = useState(false);
 
