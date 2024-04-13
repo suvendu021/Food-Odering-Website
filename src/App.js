@@ -16,12 +16,13 @@ import Cart from "./components/Cart";
 const AppLayout = () => {
   const [userName, setUserName] = useState();
 
+  //let authentication done and we get "DATA"
   useEffect(() => {
-    const data = {
-      name: "Default User",
+    const userData = {
+      name: "",
     };
 
-    setUserName(data.name);
+    setUserName(userData.name);
   }, []);
 
   return (

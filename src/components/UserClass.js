@@ -1,5 +1,6 @@
 import React from "react";
 import { EMPLOYEE_API_URL } from "../utils/constants";
+import UserContext from "./UserContext";
 
 class UserClass extends React.Component {
   constructor(props) {
@@ -44,6 +45,11 @@ class UserClass extends React.Component {
         <h3 className="font-bold">name: {firstName}</h3>
         <h3>age: {age}</h3>
         <h3>Email: {email}</h3>
+        <UserContext.Consumer>
+          {(userDataFromContext) => (
+            <h2>UserName : {userDataFromContext.loggedInUser}</h2>
+          )}
+        </UserContext.Consumer>
       </div>
     );
   }
