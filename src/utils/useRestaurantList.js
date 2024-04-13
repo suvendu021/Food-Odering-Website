@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { SWIGGY_API } from "./constants";
+import { SERVER_RESTAURANT_API, SWIGGY_API } from "./constants";
 
 const useRestaurantList = () => {
   const [restaurantList, setRestaurantList] = useState([]);
@@ -10,7 +10,7 @@ const useRestaurantList = () => {
 
   const fetchRestList = async () => {
     try {
-      const response = await fetch(SWIGGY_API);
+      const response = await fetch(SERVER_RESTAURANT_API);
       const json = await response.json();
       // console.log(json);
       setRestaurantList(
