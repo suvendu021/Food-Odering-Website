@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
-import { SERVER_RESTAURANT_API, SWIGGY_API } from "./constants";
+import {
+  SERVER_RESTAURANT_API,
+  SERVER_RESTAURANT_API_MOBILE,
+  SWIGGY_API,
+} from "./constants";
 
 const useRestaurantList = () => {
   const [restaurantList, setRestaurantList] = useState([]);
@@ -22,7 +26,7 @@ const useRestaurantList = () => {
         json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants === undefined
       ) {
-        fetchRestoForMobile(json); // Pass JSON data to fetchRestoForMobile
+        fetchRestoForMobile(json);
       }
     } catch (error) {
       console.log(error);
@@ -30,10 +34,11 @@ const useRestaurantList = () => {
   };
 
   const fetchRestoForMobile = async (jsonData) => {
-    // Accept JSON data as an argument
+    // const data = await fetch(SERVER_RESTAURANT_API_MOBILE);
+    // const jsonData = await data.json();
     // console.log(jsonData);
     setRestaurantList(
-      jsonData?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+      jsonData?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
   };

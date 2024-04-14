@@ -17,6 +17,9 @@ export const SWIGGY_API =
 
 export const SERVER_RESTAURANT_API =
   "https://food-delivery-app-server-edxc.onrender.com/api/restaurants";
+
+export const SERVER_RESTAURANT_API_MOBILE =
+  "https://food-delivery-app-server-edxc.onrender.com/mapi/restaurants";
 export const SERVER_RESTAURANT_MENU =
   "https://food-delivery-app-server-edxc.onrender.com/api/menu/";
 
