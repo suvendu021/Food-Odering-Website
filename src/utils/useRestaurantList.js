@@ -1,9 +1,5 @@
 import { useEffect, useState } from "react";
-import {
-  SERVER_RESTAURANT_API,
-  SERVER_RESTAURANT_API_MOBILE,
-  SWIGGY_API,
-} from "./constants";
+import { SERVER_RESTAURANT_API } from "./constants";
 
 const useRestaurantList = () => {
   const [restaurantList, setRestaurantList] = useState([]);
