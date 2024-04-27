@@ -5,7 +5,7 @@
   "scripts": {
     "client": "parcel index.html",
     "build": "parcel build index.html",
-    "start":"concurrently \"npm run client\"  \"cd server && npm run server\"",
+    "start": "concurrently \"npm run client\"  \"cd server && npm run server\"",
     "test": "jest",
     "watch-test": "jest --watch"
   },
@@ -39,6 +39,7 @@
     "concurrently": "^8.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hot-toast": "^2.4.1",
     "react-redux": "^9.1.0",
     "react-router-dom": "^6.21.3"
   }

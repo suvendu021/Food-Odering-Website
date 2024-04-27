@@ -14,11 +14,12 @@ class About extends Component {
   render() {
     // console.log("parent render");
     return (
-      <div className="about">
-        <h1>About US </h1>
-        <h3>These are our employee</h3>
-
-        <UserClass />
+      <div className="mt-12 p-2">
+        <h1 className="flex justify-center font-semibold font-jost text-2xl">
+          About US{" "}
+        </h1>
+        <h3 className="flex font-semibold">Contributors:</h3>
+        <span className="flex font-semibold text-xl">Suvendu Kumar Sahoo</span>
       </div>
     );
   }

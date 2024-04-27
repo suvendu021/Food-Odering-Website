@@ -1,12 +1,44 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { ITEM_IMG_URL } from "../utils/constants";
-import { addItems } from "../utils/cartSlice";
+import {
+  addItems,
+  decrementQuantity,
+  incrementQuantity,
+} from "../utils/cartSlice";
+import toast from "react-hot-toast";
 
 const ItemsList = ({ items }) => {
   const dispatch = useDispatch();
 
+  const cartItems = useSelector((store) => store.cart.items);
+
   const handleAddItem = (item) => {
     dispatch(addItems(item));
+    toast.success("item added to cart");
+  };
+
+  const handleIncrement = (item) => {
+    const existingItemIndex = cartItems.findIndex(
+      (cartItem) => cartItem.card.info.id === item.card.info.id
+    );
+
+    if (existingItemIndex !== -1) {
+      // If item already exists in the cart, dispatch the incrementQuantity action
+      dispatch(incrementQuantity(existingItemIndex));
+    }
+    toast.success("item added to cart");
+  };
+
+  const handleDecrement = (item) => {
+    const existingItemIndex = cartItems.findIndex(
+      (cartItem) => cartItem.card.info.id === item.card.info.id
+    );
+
+    if (existingItemIndex !== -1) {
+      // If item already exists in the cart, dispatch the decrementQuantity action
+      dispatch(decrementQuantity(existingItemIndex));
+    }
+    toast.success("item removed to cart");
   };
 
   return (
@@ -33,14 +65,41 @@ const ItemsList = ({ items }) => {
                     className=" md:w-28 md:h-24 h-16 w-20 rounded-xl"
                   />
                 ) : null}
-                <div>
+                {cartItems.some(
+                  (cartItem) => cartItem.card.info.id === data.card.info.id
+                ) ? (
+                  // If item is in the cart, show inc-dec-counter
+                  <div className="flex py-2 px-4 rounded-lg m-2 bg-black text-white space-x-1">
+                    <div
+                      className="cursor-pointer"
+                      onClick={() => handleDecrement(data)}
+                    >
+                      -
+                    </div>
+                    <span>
+                      {
+                        cartItems.find(
+                          (cartItem) =>
+                            cartItem.card.info.id === data.card.info.id
+                        )?.quantity
+                      }
+                    </span>
+                    <div
+                      className="cursor-pointer"
+                      onClick={() => handleIncrement(data)}
+                    >
+                      +
+                    </div>
+                  </div>
+                ) : (
+                  // If item is not in the cart, show ADD button
                   <button
-                    className="p-1 bg-black text-white rounded-lg  md:mx-8 my-2"
+                    className="py-2 px-4 rounded-lg m-2 text-xs font-semibold bg-black text-white"
                     onClick={() => handleAddItem(data)}
                   >
-                    Add +
+                    ADD
                   </button>
-                </div>
+                )}
               </div>
             </div>
           </div>

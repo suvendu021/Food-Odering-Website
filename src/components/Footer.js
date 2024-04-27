@@ -1,7 +1,7 @@
 import { LOGO_URL } from "../utils/constants";
 const Footer = () => {
   return (
-    <div className="bg-red-500 text-white h-52 flex m-0 p-1  ">
+    <div className="bg-red-500 text-white h-52 flex mt-20 p-1  ">
       <div className="flex justify-center items-center w-2/5">
         <img
           className="h-12 w-16 md:h-24 md:w-28 rounded-full  "

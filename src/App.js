@@ -12,6 +12,7 @@ import { useState, useEffect } from "react";
 import { Provider } from "react-redux";
 import AppStore from "./utils/AppStore";
 import Cart from "./components/Cart";
+import { Toaster } from "react-hot-toast";
 
 const AppLayout = () => {
   const [userName, setUserName] = useState();
@@ -29,6 +30,16 @@ const AppLayout = () => {
     <Provider store={AppStore}>
       <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
         <div>
+          <Toaster
+            position="top-center"
+            reverseOrder={false}
+            gutter={30}
+            containerClassName="notification-container"
+            toastOptions={{
+              className: "notification-toast",
+              duration: 1500,
+            }}
+          />
           <Header />
           <Outlet />
         </div>

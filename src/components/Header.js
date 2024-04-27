@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "./UserContext";
 import { useSelector } from "react-redux";
+import toast from "react-hot-toast";
 
 const Header = () => {
   const [logBtn, setlogBtn] = useState("Log-in");
@@ -79,7 +80,9 @@ const Header = () => {
               logBtn === "Log-in" ? "text-green-500" : "text-red-500"
             }`}
             onClick={() => {
-              logBtn === "Log-in" ? setlogBtn("Log-out") : setlogBtn("Log-in");
+              logBtn === "Log-in"
+                ? (setlogBtn("Log-out"), toast.success("Log in successfully"))
+                : (setlogBtn("Log-in"), toast.error("Log out successfully"));
             }}
           >
             {logBtn}
