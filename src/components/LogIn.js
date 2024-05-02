@@ -33,23 +33,15 @@ const LogIn = () => {
 
     if (logInBtn) {
       try {
-        const data = await fetch(`${SERVER}/api/v1/user/logIn`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email: emailRef.current.value,
-            password: passwordRef.current.value,
-          }),
+        const response = await axios.post(`${SERVER}/api/v1/user/logIn`, {
+          email: emailRef.current.value,
+          password: passwordRef.current.value,
         });
-        const json = await data.json();
-        // console.log(json);
-        cookie.set("accessToken", json?.data?.accessToken);
-        localStorage.setItem(
-          "userName",
-          json?.data?.authenticatedUser?.userName
-        );
+        // console.log(response);
+        const { accessToken } = response.data.data;
+        const { userName } = response.data.data.authenticatedUser;
+        cookie.set("accessToken", accessToken);
+        localStorage.setItem("userName", userName);
         navigate("/home");
         toast.success("Successfully LogIn");
       } catch (error) {
