@@ -72,7 +72,7 @@ const Cart = () => {
         </button>
       ) : null}
       {cartItems.length === 0 ? (
-        <Link to={"/"}>
+        <Link to={"/home"}>
           <p className="md:text-3xl mt-10">
             Your cart is Empty🥲, Plz add some Items !!!
           </p>
@@ -84,7 +84,7 @@ const Cart = () => {
         {cartItems.length !== 0 ? (
           <div className="mt-6">
             <p className="font-jost font-semibold text-xl">{`Total price = ${totalPrice} rupees`}</p>
-            <Link to={"/"}>
+            <Link to={"/home"}>
               <button
                 className="p-2 mt-4 mb-20 bg-red-500 text-white"
                 onClick={handleCheckout}

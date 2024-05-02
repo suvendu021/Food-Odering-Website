@@ -16,5 +16,6 @@ export const SERVER_RESTAURANT_API_MOBILE =
   "https://food-delivery-app-server-edxc.onrender.com/mapi/restaurants";
 export const SERVER_RESTAURANT_MENU =
   "https://food-delivery-app-server-edxc.onrender.com/api/menu/";
+export const SERVER = "https://food-delivery-app-server-edxc.onrender.com";
 
 export default CARD_URL;

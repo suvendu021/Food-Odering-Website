@@ -13,6 +13,8 @@ import { Provider } from "react-redux";
 import AppStore from "./utils/AppStore";
 import Cart from "./components/Cart";
 import { Toaster } from "react-hot-toast";
+import LogIn from "./components/LogIn";
+import ProtectedRoute from "./utils/ProtectedRoute";
 
 const AppLayout = () => {
   const [userName, setUserName] = useState();
@@ -54,8 +56,12 @@ const appRouter = createBrowserRouter([
     element: <AppLayout />,
     children: [
       {
+        path: "/home",
+        element: <ProtectedRoute Component={Body}></ProtectedRoute>,
+      },
+      {
         path: "/",
-        element: <Body />,
+        element: <LogIn />,
       },
       {
         path: "/about",
