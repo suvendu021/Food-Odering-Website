@@ -6,6 +6,7 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import Cookies from "universal-cookie";
+import toast from "react-hot-toast";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -45,6 +46,7 @@ const Header = () => {
       localStorage.removeItem("userName");
       cookie.remove("accessToken");
       navigate("/");
+      toast.success("Successfully logOut");
     } catch (error) {}
   };
 

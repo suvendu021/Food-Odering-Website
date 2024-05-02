@@ -4,6 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie";
 import { SERVER } from "../utils/constants";
+import toast from "react-hot-toast";
 
 const LogIn = () => {
   const [logInBtn, setLogInBtn] = useState(false);
@@ -50,6 +51,7 @@ const LogIn = () => {
           json?.data?.authenticatedUser?.userName
         );
         navigate("/home");
+        toast.success("Successfully LogIn");
       } catch (error) {
         console.log("login error", error);
 
@@ -133,7 +135,7 @@ const LogIn = () => {
           }}
         >
           {logInBtn
-            ? "Don't have an account ? Create a new Account"
+            ? "New User? Create a new Account"
             : "Already have an account ? SignIn"}
         </p>
       </form>
