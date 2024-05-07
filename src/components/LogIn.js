@@ -1,3 +1,4 @@
+// LogIn.js
 import React, { useRef, useState } from "react";
 import { ValidateUser } from "../utils/ValidateUser";
 import axios from "axios";
@@ -5,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie";
 import { SERVER } from "../utils/constants";
 import toast from "react-hot-toast";
+import LoadingOverlay from "./LoadingOverlay";
 
 const LogIn = () => {
   const [logInBtn, setLogInBtn] = useState(false);
@@ -32,7 +34,7 @@ const LogIn = () => {
       return;
     }
 
-    setLoading(true); // Show loading animation
+    setLoading(true); // Show loading overlay
 
     if (logInBtn) {
       try {
@@ -40,7 +42,6 @@ const LogIn = () => {
           email: emailRef.current.value,
           password: passwordRef.current.value,
         });
-        // console.log(response);
         const { accessToken } = response.data.data;
         const { userName } = response.data.data.authenticatedUser;
         cookie.set("accessToken", accessToken);
@@ -67,7 +68,6 @@ const LogIn = () => {
           email: emailRef.current.value,
           password: passwordRef.current.value,
         });
-        // console.log(data);
         setErrorMessage("plz click on SignIn");
       } catch (error) {
         console.log("SignUp failed", error);
@@ -83,66 +83,61 @@ const LogIn = () => {
       }
     }
 
-    setLoading(false); // Hide loading animation
+    setLoading(false); // Hide loading overlay
   };
 
   return (
-    <div className="md:mt-[6%] mt-[20%]">
-      {loading ? ( // If loading is true, show the loading animation
-        <div className="fixed top-0 left-0 w-full h-full bg-black opacity-80 flex justify-center items-center z-50">
-          <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-purple-500"></div>
-        </div>
-      ) : (
-        // Else, show the login form
-        <form
-          className="flex flex-col md:w-5/12 w-4/5 bg-red-500 px-8 py-5 mx-auto rounded-xl"
-          onSubmit={(e) => {
-            e.preventDefault();
+    <div className="h-screen flex justify-center items-center">
+      {loading && <LoadingOverlay />} {/* Conditionally render the overlay */}
+      <form
+        className="flex flex-col md:w-5/12 w-4/5 bg-red-500 px-8 py-5 mx-auto"
+        onSubmit={(e) => {
+          e.preventDefault();
+        }}
+      >
+        <p className="text-white font-semibold text-3xl">
+          {logInBtn ? "SignIn" : "SignUp"}
+        </p>
+        <input
+          required
+          ref={userNameRef}
+          type="text"
+          placeholder="Enter UserName"
+          className={`p-2 mt-6 ${logInBtn ? "hidden" : "block"}`}
+        />
+        <input
+          required
+          ref={emailRef}
+          type="email"
+          placeholder="Enter Email"
+          className="p-2 mt-6"
+        />
+        <input
+          required
+          ref={passwordRef}
+          type="password"
+          placeholder="Enter Password"
+          className="p-2 mt-6"
+        />
+        <button
+          className="p-2 mt-6 bg-black font-semibold text-white"
+          onClick={handleUserLogin}
+          disabled={loading} // Disable the button when loading
+        >
+          {logInBtn ? "SignIn" : "SignUp"}
+        </button>
+        <p className="text-white text-xs font-bold">{errorMessage}</p>
+        <p
+          className="text-white mt-2 cursor-pointer"
+          onClick={() => {
+            setLogInBtn(!logInBtn);
           }}
         >
-          <p className="text-white font-semibold text-3xl">
-            {logInBtn ? "SignIn" : "SignUp"}
-          </p>
-          <input
-            required
-            ref={userNameRef}
-            type="text"
-            placeholder="Enter UserName"
-            className={`p-2 mt-6 ${logInBtn ? "hidden" : "block"}`}
-          />
-          <input
-            required
-            ref={emailRef}
-            type="email"
-            placeholder="Enter Email"
-            className="p-2 mt-6"
-          />
-          <input
-            required
-            ref={passwordRef}
-            type="password"
-            placeholder="Enter Password"
-            className="p-2 mt-6"
-          />
-          <button
-            className="p-2 mt-6 bg-black font-semibold text-white"
-            onClick={handleUserLogin}
-          >
-            {logInBtn ? "SignIn" : "SignUp"}
-          </button>
-          <p className="text-white text-xs font-bold">{errorMessage}</p>
-          <p
-            className="text-white mt-2 cursor-pointer"
-            onClick={() => {
-              setLogInBtn(!logInBtn);
-            }}
-          >
-            {logInBtn
-              ? "New User? Create a new Account"
-              : "Already have an account ? SignIn"}
-          </p>
-        </form>
-      )}
+          {logInBtn
+            ? "New User? Create a new Account"
+            : "Already have an account ? SignIn"}
+        </p>
+      </form>
     </div>
   );
 };
