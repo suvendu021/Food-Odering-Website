@@ -28,7 +28,7 @@ const Cart = () => {
   };
   const handleCheckout = () => {
     dispatch(clearCart());
-    toast("Please order directly on Swiggy or Zomato", {
+    toast("Your order will delivered soon !!!", {
       duration: 2000,
       position: "top-center",
 
